@@ -17,11 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile menu toggle (simple version for demo)
+    // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    if (mobileMenuBtn) {
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
-            alert('Mobile menu clicked');
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
         });
     }
 
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('http://localhost:3000/api/contact', {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (response.ok) {
-                    alert('Message sent successfully!');
+                    showSuccessPopup('Message sent successfully!', 'We will get back to you within 24 hours.');
                     contactForm.reset();
                 } else {
                     alert('Failed to send message: ' + (result.error || 'Unknown error'));
@@ -113,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('http://localhost:3000/api/book', {
+                const response = await fetch('/api/book', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -122,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (response.ok) {
-                    alert('Booking submitted successfully! We will see you at the chosen time.');
+                    showSuccessPopup('Booking Confirmed!', 'We will see you at the chosen time. A confirmation email has been sent to our team.');
                     bookingForm.reset();
                 } else {
                     alert('Failed to submit booking: ' + (result.error || 'Unknown error'));
@@ -137,3 +139,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Success Popup Modal Logic
+function showSuccessPopup(title, message) {
+    let overlay = document.querySelector('.success-modal-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'success-modal-overlay';
+
+        const modalContent = document.createElement('div');
+        modalContent.className = 'success-modal-content';
+
+        const icon = document.createElement('div');
+        icon.className = 'success-modal-icon';
+        icon.innerHTML = '✓';
+
+        const textTitle = document.createElement('h3');
+        textTitle.className = 'success-modal-title';
+
+        const textMessage = document.createElement('p');
+        textMessage.className = 'success-modal-message';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'btn btn-primary';
+        closeBtn.textContent = 'Close';
+        closeBtn.onclick = () => {
+            overlay.classList.remove('active');
+            setTimeout(() => {
+                if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+            }, 300);
+        };
+
+        modalContent.appendChild(icon);
+        modalContent.appendChild(textTitle);
+        modalContent.appendChild(textMessage);
+        modalContent.appendChild(closeBtn);
+        overlay.appendChild(modalContent);
+
+        document.body.appendChild(overlay);
+    }
+
+    overlay.querySelector('.success-modal-title').textContent = title;
+    if (message) {
+        overlay.querySelector('.success-modal-message').style.display = 'block';
+        overlay.querySelector('.success-modal-message').textContent = message;
+    } else {
+        overlay.querySelector('.success-modal-message').style.display = 'none';
+    }
+
+    void overlay.offsetWidth; // Force reflow
+    overlay.classList.add('active');
+}
