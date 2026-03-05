@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Consultation | GrowthPath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/book-consultation.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Growth<span class="highlight">Path</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="why-us.html" class="nav-link">Why Us</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="book-consultation.html" class="btn btn-primary">Book Free Consultation</a>
+                <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header pb-0">
+            <div class="container">
+                <div class="consultation-header">
+                    <span class="tag-icon mb-3 d-inline-block">🎯</span>
+                    <h1 class="page-title">Book Your <span class="text-gradient">Free Strategy Session</span></h1>
+                    <p class="page-subtitle">Schedule a 30-minute call with our growth experts. We'll audit your current
+                        strategy and map out a custom growth path for your business.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="consultation-section">
+            <div class="container consultation-container">
+
+                <div class="consultation-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <h4>Comprehensive Audit</h4>
+                        <p>We analyze your current digital footprint to find hidden gaps and revenue opportunities.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💡</div>
+                        <h4>Actionable Insights</h4>
+                        <p>Walk away with immediate action steps you can implement, whether you hire us or not.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📈</div>
+                        <h4>Custom Growth Plan</h4>
+                        <p>Discover the exact framework we use to scale brands in your specific industry.</p>
+                    </div>
+                </div>
+
+                <div class="booking-wrapper">
+                    <h3>Tell us about your business</h3>
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company Name</label>
+                                <input type="text" id="company" class="form-control" placeholder="Acme Corp" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Work Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="jane@company.com"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="website" class="form-label">Website URL</label>
+                                <input type="url" id="website" class="form-control"
+                                    placeholder="https://www.example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="form-label">Services</label>
+                            <select id="service" class="form-control select-dropdown" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="Lead Generation">Lead Generation</option>
+                                <option value="SEO Optimization">SEO Optimization</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Budget</label>
+                            <select id="budget" class="form-control select-dropdown" required>
+                                <option value="" disabled selected>Select a range</option>
+                                <option value="Under 200,000 naira">Under 200,000 naira</option>
+                                <option value="200,000 naira to 5 million naira">200,000 naira to 5 million naira
+                                </option>
+                                <option value="Over 5 million naira">Over 5 million naira</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="meetingTime" class="form-label">Preferred Meeting Date & Time</label>
+                            <input type="datetime-local" id="meetingTime" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="goal" class="form-label">Primary Challenge / Goal</label>
+                            <textarea id="goal" class="form-control" rows="4"
+                                placeholder="E.g., We need to lower our Customer Acquisition Cost..."
+                                required></textarea>
+                        </div>
+
+                        <!-- Scheduling Date Placeholder -->
+                        <div class="scheduling-notice">
+                            <p><em>* After submitting, you will be redirected to our calendar to pick a time slot.</em>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">Submit & Proceed to Calendar
+                            →</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Growth<span class="highlight">Path</span></span>
+                </a>
+                <p class="footer-description">We help modern businesses generate leads, scale sales, and dominate their
+                    niche with data-driven strategies.</p>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-heading">Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="why-us.html">Why Us</a>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-heading">Support</h3>
+                <a href="contact.html">Contact Us</a>
+    </footer>
+
+    <script type="module" defer>
+        import Chatbot from "https://cdn.n8nchatui.com/v1/embed.js";
+        Chatbot.init({
+            "n8nChatUrl": "https://benedictspr.app.n8n.cloud/webhook/523e8cb2-8d56-4db1-9029-43b0c2a8c5e1/chat",
+            "metadata": {}, // Include any custom data to send with each message to your n8n workflow
+            "theme": {
+                "button": {
+                    "backgroundColor": "#10b981",
+                    "right": 20,
+                    "bottom": 20,
+                    "size": 60,
+                    "iconColor": "#fafafa",
+                    "customIconSrc": "https://www.svgrepo.com/show/362552/chat-centered-dots-bold.svg",
+                    "customIconSize": 60,
+                    "customIconBorderRadius": 15,
+                    "autoWindowOpen": {
+                        "autoOpen": false,
+                        "openDelay": 2
+                    },
+                    "borderRadius": "rounded",
+                    "draggable": false
+                },
+                "tooltip": {
+                    "showTooltip": true,
+                    "tooltipMessage": "Hi, I'm GrowthPath Assistant! Let's scale your business 🚀",
+                    "tooltipBackgroundColor": "#0D1627",
+                    "tooltipTextColor": "#f8fafc",
+                    "tooltipFontSize": 15,
+                    "hideTooltipOnMobile": true
+                },
+                "allowProgrammaticMessage": false,
+                "chatWindow": {
+                    "borderRadiusStyle": "rounded",
+                    "avatarBorderRadius": 25,
+                    "messageBorderRadius": 6,
+                    "showTitle": true,
+                    "title": "GrowthPath Assistant",
+                    "titleAvatarSrc": "https://www.svgrepo.com/show/362552/chat-centered-dots-bold.svg",
+                    "avatarSize": 40,
+                    "welcomeMessage": "Hello! How can we help you grow your business today?",
+                    "errorMessage": "Please connect me to n8n first",
+                    "backgroundColor": "#070B14",
+                    "height": 600,
+                    "width": 400,
+                    "fontSize": 16,
+                    "starterPrompts": [
+                        "Our Services",
+                        "Book Consultation"
+                    ],
+                    "starterPromptFontSize": 15,
+                    "renderHTML": false,
+                    "clearChatOnReload": false,
+                    "showScrollbar": false,
+                    "botMessage": {
+                        "backgroundColor": "#10b981",
+                        "textColor": "#fafafa",
+                        "showAvatar": true,
+                        "avatarSrc": "https://www.svgrepo.com/show/334455/bot.svg",
+                        "showCopyToClipboardIcon": false
+                    },
+                    "userMessage": {
+                        "backgroundColor": "#0D1627",
+                        "textColor": "#f8fafc",
+                        "showAvatar": true,
+                        "avatarSrc": "https://www.svgrepo.com/show/532363/user-alt-1.svg"
+                    },
+                    "textInput": {
+                        "placeholder": "Type your query",
+                        "backgroundColor": "#0D1627",
+                        "textColor": "#f8fafc",
+                        "sendButtonColor": "#10b981",
+                        "maxChars": 50,
+                        "maxCharsWarningMessage": "You exceeded the characters limit. Please input less than 50 characters.",
+                        "autoFocus": false,
+                        "borderRadius": 6,
+                        "sendButtonBorderRadius": 50
+                    },
+                    "uploadsConfig": {
+                        "enabled": true,
+                        "acceptFileTypes": [
+                            "jpeg",
+                            "jpg",
+                            "png",
+                            "pdf"
+                        ],
+                        "maxFiles": 5,
+                        "maxSizeInMB": 10
+                    },
+                    "voiceInputConfig": {
+                        "enabled": true,
+                        "maxRecordingTime": 15,
+                        "recordingNotSupportedMessage": "To record audio, use modern browsers like Chrome or Firefox that support audio recording"
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
